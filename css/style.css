@@ -3,11 +3,35 @@
 	height: 75px;
 }
 
+#navText {
+	color: white;
+}
+
+.gridLayout {
+	padding-left: 50px;
+}
+
 .grid {
 	height: 100px;
 	margin: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
 	border-radius: 4px;
 	background-color: red;
+	background-image: url(../images/master10_background.gif);
+	background-size: cover;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
+}
+
+.grid:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+.value {
+	margin-top: 35px;
 }
 
 .center {
@@ -16,9 +40,28 @@
 	justify-content: center;
 }
 
+#podium {
+	background-color: gray;
+	margin-top: 5px;
+}
 
-#panel {
+#question {
+	height: 300px;
 	background-color: yellow;
+	margin: 5px;
+}
+
+#score {
+	height: 100px;
+	background-color: red;
+	margin: 5px;
+
+}
+
+#previous {
+	height: 100px;
+	background-color: green;
+	margin: 5px;
 }
 
 #above {

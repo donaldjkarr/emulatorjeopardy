@@ -1,6 +1,6 @@
 #mainNav {
 	background-color: gray;
-	height: 75px;
+	height: 60px;
 }
 
 #navText {
@@ -9,6 +9,14 @@
 
 .gridLayout {
 	padding-left: 50px;
+}
+
+.grid-header {
+    height: 50px;
+    margin: 5px;
+    border: 2px solid brown;
+    border-radius: 4px;
+    background-color: greenyellow;
 }
 
 .grid {
@@ -30,6 +38,10 @@
 	opacity: 0.8;
 }
 
+.answers:hover {
+	cursor: pointer;
+}
+
 .value {
 	margin-top: 35px;
 }
@@ -40,32 +52,106 @@
 	justify-content: center;
 }
 
-#podium {
+#podiumBackground {
 	background-color: gray;
 	margin-top: 5px;
 }
 
-#question {
-	height: 300px;
+#podium{
+	padding-top: 5px;
+	height: 400px;
 	background-color: yellow;
 	margin: 5px;
 }
 
-#score {
-	height: 100px;
+.questionCard {
+    margin: 10px;
+    height: 90px;
+    width: 95%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+#question {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.answers {
+    margin: 10px;
+    height: 60px;
+    width: 95%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+#ans1 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#ans2 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#ans3 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#ans4 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#scoreCard {
+	height: 80px;
 	background-color: red;
 	margin: 5px;
 
 }
 
-#previous {
-	height: 100px;
+#scoreHead {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#score {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#previousCard {
+	height: 80px;
 	background-color: green;
 	margin: 5px;
 }
 
+#previousHead {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#previous {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 #above {
 	background-color: gray;
+	margin-top: 10px;
 }
 
 #below {

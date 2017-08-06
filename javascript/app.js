@@ -5,7 +5,6 @@ var incorrect = 0;
 var correctAnswer = [];
 var questions = [];
 var chosen;
-var value = 0;
 
 var easyMovieURL = "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple";
 var mediumMovieURL = "https://opentdb.com/api.php?amount=1&category=11&difficulty=medium&type=multiple";
@@ -36,9 +35,6 @@ function ajaxMovieEasy() {
 	        method: "GET"
 	    }).done(function(response) {
 	        console.log(response);
-
-	        	value = 100;
-	        	console.log(value);
 
 		        correctAnswer = [];
 		        questions = [];
@@ -566,11 +562,15 @@ function ajaxSportsHard() {
 		    });
 }
 
-// CONTINUE FUNCTION
+// // CONTINUE FUNCTION
 
-function continueGame() {
-	chosen == correctAnswer ? counter++ : incorrect++;
-}
+// function continueGame() {
+// 	chosen == correctAnswer ? counter++ : incorrect++;
+
+// 	$("#score").html(wager);
+
+// 	$("#previous").html(correctAnswer);
+// }
 
 // RANDOMIZE THE ARRAY
 function randomize() {
@@ -585,116 +585,256 @@ function randomize() {
 
 $(document).ready(function() {
 
+	var ready = [];
+
+	// CONTINUE FUNCTION
+
+	function continueGame() {
+		chosen == correctAnswer ? counter++ : incorrect++;
+
+		$("#score").html(wager);
+
+		$("#previous").html(correctAnswer);
+	}
+
+
 	// MOVIE CLICK EVENTS
-	$(".movies100").click(function() {
+	$("#movies100").click(function() {
+		ready = [];
 		ajaxMovieEasy();
+		var value = $("#movies100");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".movies200").click(function() {
+	$("#movies200").click(function() {
+		ready = [];
 		ajaxMovieEasy();
+		var value = $("#movies200");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".movies300").click(function() {
+	$("#movies300").click(function() {
 		ajaxMovieMedium();
+		var value = $("#movies300");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".movies400").click(function() {
+	$("#movies400").click(function() {
 		ajaxMovieHard();
+		var value = $("#movies400");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".movies500").click(function() {
+	$("#movies500").click(function() {
 		ajaxMovieHard();
+		var value = $("#movies500");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
 
 	// SCIENCE CLICK EVENTS
 
-	$(".science100").click(function() {
+	$("#science100").click(function() {
 		ajaxScienceEasy();
+		var value = $("#science100");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".science200").click(function() {
+	$("#science200").click(function() {
 		ajaxScienceEasy();
+		var value = $("#science200");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".science300").click(function() {
+	$("#science300").click(function() {
 		ajaxScienceMedium();
+		var value = $("#science300");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".science400").click(function() {
+	$("#science400").click(function() {
 		ajaxScienceHard();
+		var value = $("#science400");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".science500").click(function() {
+	$("#science500").click(function() {
 		ajaxScienceHard();
+		var value = $("#science500");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
 
 	// POLITICS CLICK EVENTS
 
-	$(".politics100").click(function() {
+	$("#politics100").click(function() {
 		ajaxPoliticsEasy();
+		var value = $("#politics100");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".politics200").click(function() {
+	$("#politics200").click(function() {
 		ajaxPoliticsEasy();
+		var value = $("#politics200");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".politics300").click(function() {
+	$("#politics300").click(function() {
 		ajaxPoliticsMedium();
+		var value = $("#politics300");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".politics400").click(function() {
+	$("#politics400").click(function() {
 		ajaxPoliticsHard();
+		var value = $("#politics400");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".politics500").click(function() {
+	$("#politics500").click(function() {
 		ajaxPoliticsHard();
+		var value = $("#politics500");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
 
 	// HISTORY CLICK EVENTS
 
-	$(".history100").click(function() {
+	$("#history100").click(function() {
 		ajaxHistoryEasy();
+		var value = $("#history100");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".history200").click(function() {
+	$("#history200").click(function() {
 		ajaxHistoryEasy();
+		var value = $("#history200");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".history300").click(function() {
+	$("#history300").click(function() {
 		ajaxHistoryMedium();
+		var value = $("#history300");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".history400").click(function() {
+	$("#history400").click(function() {
 		ajaxHistoryHard();
+		var value = $("#history400");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".history500").click(function() {
+	$("#history500").click(function() {
 		ajaxHistoryHard();
+		var value = $("#history500");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
 	// SPORTS CLICK EVENTS
 
-	$(".sports100").click(function() {
+	$("#sports100").click(function() {
 		ajaxSportsEasy();
+		var value = $("#sports100");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".sports200").click(function() {
+	$("#sports200").click(function() {
 		ajaxSportsEasy();
+		var value = $("#sports200");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".sports300").click(function() {
+	$("#sports300").click(function() {
 		ajaxSportsMedium();
+		var value = $("#sports300");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".sports400").click(function() {
+	$("#sports400").click(function() {
 		ajaxSportsHard();
+		var value = $("#sports400");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
-	$(".sports500").click(function() {
+	$("#sports500").click(function() {
 		ajaxSportsHard();
+		var value = $("#sports500");
+		var wager = value.data("value");
+		ready.push(wager);
+		console.log("wager = " + wager);
+		console.log("for scoring " + ready);
 	});
 
 	// ANSWER CLICK EVENTS

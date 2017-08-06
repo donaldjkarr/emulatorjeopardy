@@ -53,14 +53,15 @@
 }
 
 #podiumBackground {
-	background-color: gray;
+	background-color: brown;
 	margin-top: 5px;
 }
 
 #podium{
+	background-image: url(../images/master10_background.gif);
+	background-size: cover;
 	padding-top: 5px;
 	height: 420px;
-	background-color: yellow;
 	margin: 5px;
 }
 
@@ -114,8 +115,10 @@
 
 #scoreCard {
 	height: 70px;
-	background-color: red;
+	background-color: #060ce9;
 	margin: 5px;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
 }
 
 #scoreHead {
@@ -128,12 +131,15 @@
     display: flex;
 	align-items: center;
 	justify-content: center;
+	color: white;
 }
 
 #previousCard {
 	height: 80px;
-	background-color: yellow;
+	background-color: #060ce9;
 	margin: 5px;
+	color: white;
+	font-family: 'Press Start 2P', cursive;
 }
 
 #previousHead {
@@ -148,6 +154,7 @@
 	justify-content: center;
 	width: 95%;
 	background-color: white;
+	color: black;
 	border: 2px solid black;
 	border-radius: 4px;	
 }

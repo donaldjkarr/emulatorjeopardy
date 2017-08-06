@@ -38,10 +38,6 @@
 	opacity: 0.8;
 }
 
-.answers:hover {
-	cursor: pointer;
-}
-
 .value {
 	margin-top: 35px;
 }
@@ -95,10 +91,18 @@
 	justify-content: center;
 }
 
+#ans1:hover {
+	cursor: pointer;
+}
+
 #ans2 {
     display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+#ans2:hover {
+	cursor: pointer;
 }
 
 #ans3 {
@@ -107,10 +111,18 @@
 	justify-content: center;
 }
 
+#ans3:hover {
+	cursor: pointer;
+}
+
 #ans4 {
     display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+#ans4:hover {
+	cursor: pointer;
 }
 
 #scoreCard {

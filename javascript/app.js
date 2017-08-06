@@ -1,10 +1,13 @@
 console.log("hello friend");
 
-var counter = 0;
-var incorrect = 0;
+var counter = ['2', '5'];
+var incorrect = ['5', '4'];
 var correctAnswer = [];
 var questions = [];
 var chosen;
+
+// var test = counter.map(Number);
+// console.log(test);
 
 var easyMovieURL = "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple";
 var mediumMovieURL = "https://opentdb.com/api.php?amount=1&category=11&difficulty=medium&type=multiple";
@@ -585,16 +588,50 @@ function randomize() {
 
 $(document).ready(function() {
 
-	var ready = [];
+	var add = [];
+
+	var sub = [];
+
+
+
 
 	// CONTINUE FUNCTION
 
 	function continueGame() {
-		chosen == correctAnswer ? counter++ : incorrect++;
+		// chosen == correctAnswer ? counter++ : incorrect++;
 
-		$("#score").html(wager);
+		if (chosen == correctAnswer) {
+			addToTotal();
+		} else {
+			subToTotal();
+		}
 
 		$("#previous").html(correctAnswer);
+
+
+	}
+
+	// LOGS IF RIGHT OR WRONG
+	function addToTotal() {
+		add.push(ready);
+	}
+
+	function subToTotal() {
+		sub.push(ready);
+	}
+
+	// SUM ARRAYS
+
+	function totalScore() {
+		var addInt = add.map(Number);
+		var subInt = sub.map(Number);
+
+		addSum = addInt.reduce(function(a, b) { return a + b; }, 0);
+		subSum = subInt.reduce(function(a, b) { return a + b; }, 0);
+
+		total = addSum - subSum;
+
+		$("#score").html(total);
 	}
 
 
@@ -607,6 +644,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+
 	});
 
 	$("#movies200").click(function() {
@@ -620,6 +658,7 @@ $(document).ready(function() {
 	});
 
 	$("#movies300").click(function() {
+		ready = [];
 		ajaxMovieMedium();
 		var value = $("#movies300");
 		var wager = value.data("value");
@@ -629,6 +668,7 @@ $(document).ready(function() {
 	});
 
 	$("#movies400").click(function() {
+		ready = [];
 		ajaxMovieHard();
 		var value = $("#movies400");
 		var wager = value.data("value");
@@ -638,6 +678,7 @@ $(document).ready(function() {
 	});
 
 	$("#movies500").click(function() {
+		ready = [];
 		ajaxMovieHard();
 		var value = $("#movies500");
 		var wager = value.data("value");
@@ -650,6 +691,7 @@ $(document).ready(function() {
 	// SCIENCE CLICK EVENTS
 
 	$("#science100").click(function() {
+		ready = [];
 		ajaxScienceEasy();
 		var value = $("#science100");
 		var wager = value.data("value");
@@ -659,6 +701,7 @@ $(document).ready(function() {
 	});
 
 	$("#science200").click(function() {
+		ready = [];
 		ajaxScienceEasy();
 		var value = $("#science200");
 		var wager = value.data("value");
@@ -668,6 +711,7 @@ $(document).ready(function() {
 	});
 
 	$("#science300").click(function() {
+		ready = [];
 		ajaxScienceMedium();
 		var value = $("#science300");
 		var wager = value.data("value");
@@ -677,6 +721,7 @@ $(document).ready(function() {
 	});
 
 	$("#science400").click(function() {
+		ready = [];
 		ajaxScienceHard();
 		var value = $("#science400");
 		var wager = value.data("value");
@@ -686,6 +731,7 @@ $(document).ready(function() {
 	});
 
 	$("#science500").click(function() {
+		ready = [];
 		ajaxScienceHard();
 		var value = $("#science500");
 		var wager = value.data("value");
@@ -698,6 +744,7 @@ $(document).ready(function() {
 	// POLITICS CLICK EVENTS
 
 	$("#politics100").click(function() {
+		ready = [];
 		ajaxPoliticsEasy();
 		var value = $("#politics100");
 		var wager = value.data("value");
@@ -707,6 +754,7 @@ $(document).ready(function() {
 	});
 
 	$("#politics200").click(function() {
+		ready = [];
 		ajaxPoliticsEasy();
 		var value = $("#politics200");
 		var wager = value.data("value");
@@ -716,6 +764,7 @@ $(document).ready(function() {
 	});
 
 	$("#politics300").click(function() {
+		ready = [];
 		ajaxPoliticsMedium();
 		var value = $("#politics300");
 		var wager = value.data("value");
@@ -725,6 +774,7 @@ $(document).ready(function() {
 	});
 
 	$("#politics400").click(function() {
+		ready = [];
 		ajaxPoliticsHard();
 		var value = $("#politics400");
 		var wager = value.data("value");
@@ -734,6 +784,7 @@ $(document).ready(function() {
 	});
 
 	$("#politics500").click(function() {
+		ready = [];
 		ajaxPoliticsHard();
 		var value = $("#politics500");
 		var wager = value.data("value");
@@ -746,6 +797,7 @@ $(document).ready(function() {
 	// HISTORY CLICK EVENTS
 
 	$("#history100").click(function() {
+		ready = [];
 		ajaxHistoryEasy();
 		var value = $("#history100");
 		var wager = value.data("value");
@@ -755,6 +807,7 @@ $(document).ready(function() {
 	});
 
 	$("#history200").click(function() {
+		ready = [];
 		ajaxHistoryEasy();
 		var value = $("#history200");
 		var wager = value.data("value");
@@ -764,6 +817,7 @@ $(document).ready(function() {
 	});
 
 	$("#history300").click(function() {
+		ready = [];
 		ajaxHistoryMedium();
 		var value = $("#history300");
 		var wager = value.data("value");
@@ -773,6 +827,7 @@ $(document).ready(function() {
 	});
 
 	$("#history400").click(function() {
+		ready = [];
 		ajaxHistoryHard();
 		var value = $("#history400");
 		var wager = value.data("value");
@@ -782,6 +837,7 @@ $(document).ready(function() {
 	});
 
 	$("#history500").click(function() {
+		ready = [];
 		ajaxHistoryHard();
 		var value = $("#history500");
 		var wager = value.data("value");
@@ -793,6 +849,7 @@ $(document).ready(function() {
 	// SPORTS CLICK EVENTS
 
 	$("#sports100").click(function() {
+		ready = [];
 		ajaxSportsEasy();
 		var value = $("#sports100");
 		var wager = value.data("value");
@@ -802,6 +859,7 @@ $(document).ready(function() {
 	});
 
 	$("#sports200").click(function() {
+		ready = [];
 		ajaxSportsEasy();
 		var value = $("#sports200");
 		var wager = value.data("value");
@@ -811,6 +869,7 @@ $(document).ready(function() {
 	});
 
 	$("#sports300").click(function() {
+		ready = [];
 		ajaxSportsMedium();
 		var value = $("#sports300");
 		var wager = value.data("value");
@@ -820,6 +879,7 @@ $(document).ready(function() {
 	});
 
 	$("#sports400").click(function() {
+		ready = [];
 		ajaxSportsHard();
 		var value = $("#sports400");
 		var wager = value.data("value");
@@ -829,6 +889,7 @@ $(document).ready(function() {
 	});
 
 	$("#sports500").click(function() {
+		ready = [];
 		ajaxSportsHard();
 		var value = $("#sports500");
 		var wager = value.data("value");
@@ -844,6 +905,11 @@ $(document).ready(function() {
 		chosen = question1;
 		continueGame();
 		console.log(chosen);
+		console.log("add " + add + " sub " + sub);
+		totalScore();
+		console.log("total = " + total);
+		// console.log("addSum " + addSum + " subSum " + subSum);
+
 	});
 
 	$("#ans2").click(function() {
@@ -851,6 +917,10 @@ $(document).ready(function() {
 		chosen = question2;
 		continueGame();
 		console.log(chosen);
+		console.log("add " + add + " sub " + sub);
+		totalScore();
+		console.log("total = " + total);
+		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 
 	$("#ans3").click(function() {
@@ -858,6 +928,10 @@ $(document).ready(function() {
 		chosen = question3;
 		continueGame();
 		console.log(chosen);
+		console.log("add " + add + " sub " + sub);
+		totalScore();
+		console.log("total = " + total);
+		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 
 	$("#ans4").click(function() {
@@ -865,6 +939,10 @@ $(document).ready(function() {
 		chosen = question4;
 		continueGame();
 		console.log(chosen);
+		console.log("add " + add + " sub " + sub);
+		totalScore();
+		console.log("total = " + total);
+		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 
 

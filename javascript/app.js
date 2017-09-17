@@ -1,13 +1,27 @@
 console.log("hello friend");
 
-var counter = ['2', '5'];
-var incorrect = ['5', '4'];
+// var counter = ['2', '5'];
+// var incorrect = ['5', '4'];
 var correctAnswer = [];
 var questions = [];
 var chosen;
 
-// var test = counter.map(Number);
-// console.log(test);
+
+// var categories = {
+// 	movies: 11,
+// 	science: 17
+// }
+
+// $(document).on('click', '.answerChoice', (e) => {
+// 	var isCorrect = $(this).data['correct'];
+// 	$('answerChoice').removeClass('.answerChoice');
+
+// 	if (isCorrect) {
+// 		// increment score
+// 	}
+// }) 
+
+// var url = `https://opentdb.com/api.php?amount=1&category=${category}&difficulty=${difficulty}&type=multiple`
 
 var easyMovieURL = "https://opentdb.com/api.php?amount=1&category=11&difficulty=easy&type=multiple";
 var mediumMovieURL = "https://opentdb.com/api.php?amount=1&category=11&difficulty=medium&type=multiple";
@@ -28,6 +42,8 @@ var hardHistoryURL = "https://opentdb.com/api.php?amount=1&category=23&difficult
 var easySportsURL = "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple";
 var mediumSportsURL = "https://opentdb.com/api.php?amount=1&category=21&difficulty=medium&type=multiple";
 var hardSportsURL = "https://opentdb.com/api.php?amount=1&category=21&difficulty=hard&type=multiple";
+
+
 
 // FUNCTIONS AND AJAX CALLS
 
@@ -632,6 +648,12 @@ $(document).ready(function() {
 		total = addSum - subSum;
 
 		$("#score").html(total);
+
+		if (total < 0) {
+			$("#scoreCard").css("background-color", "red");
+		} else {
+			$("#scoreCard").css("background-color", "#060ce9");
+		}
 	}
 
 
@@ -639,22 +661,24 @@ $(document).ready(function() {
 	$("#movies100").click(function() {
 		ready = [];
 		ajaxMovieEasy();
-		var value = $("#movies100");
+		var value = $("#movies300");
 		var wager = value.data("value");
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 
 	});
 
 	$("#movies200").click(function() {
 		ready = [];
-		ajaxMovieEasy();
-		var value = $("#movies200");
+		ajaxMovieMedium();
+		var value = $("#movies300");
 		var wager = value.data("value");
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#movies300").click(function() {
@@ -665,6 +689,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#movies400").click(function() {
@@ -675,6 +700,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#movies500").click(function() {
@@ -685,6 +711,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 
@@ -698,6 +725,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#science200").click(function() {
@@ -708,6 +736,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#science300").click(function() {
@@ -718,6 +747,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#science400").click(function() {
@@ -728,6 +758,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#science500").click(function() {
@@ -738,6 +769,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 
@@ -751,6 +783,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#politics200").click(function() {
@@ -761,6 +794,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#politics300").click(function() {
@@ -771,6 +805,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#politics400").click(function() {
@@ -781,6 +816,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#politics500").click(function() {
@@ -791,6 +827,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 
@@ -804,6 +841,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#history200").click(function() {
@@ -814,6 +852,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#history300").click(function() {
@@ -824,6 +863,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#history400").click(function() {
@@ -834,6 +874,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#history500").click(function() {
@@ -844,6 +885,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	// SPORTS CLICK EVENTS
@@ -856,6 +898,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#sports200").click(function() {
@@ -866,6 +909,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#sports300").click(function() {
@@ -876,6 +920,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#sports400").click(function() {
@@ -886,6 +931,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	$("#sports500").click(function() {
@@ -896,6 +942,7 @@ $(document).ready(function() {
 		ready.push(wager);
 		console.log("wager = " + wager);
 		console.log("for scoring " + ready);
+		$("#hide").slideDown();
 	});
 
 	// ANSWER CLICK EVENTS
@@ -908,6 +955,7 @@ $(document).ready(function() {
 		console.log("add " + add + " sub " + sub);
 		totalScore();
 		console.log("total = " + total);
+		$("#hide").slideUp();
 		// console.log("addSum " + addSum + " subSum " + subSum);
 
 	});
@@ -920,6 +968,7 @@ $(document).ready(function() {
 		console.log("add " + add + " sub " + sub);
 		totalScore();
 		console.log("total = " + total);
+		$("#hide").slideUp();
 		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 
@@ -931,6 +980,7 @@ $(document).ready(function() {
 		console.log("add " + add + " sub " + sub);
 		totalScore();
 		console.log("total = " + total);
+		$("#hide").slideUp();
 		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 
@@ -942,6 +992,7 @@ $(document).ready(function() {
 		console.log("add " + add + " sub " + sub);
 		totalScore();
 		console.log("total = " + total);
+		$("#hide").slideUp();
 		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 

@@ -1,3 +1,9 @@
+body {
+	background-image: url(../images/stage.jpg);
+	background-size: cover;
+	background-position: 50% 70%;
+}
+
 #mainNav {
 	background-color: gray;
 	height: 60px;

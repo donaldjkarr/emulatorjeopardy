@@ -661,7 +661,7 @@ $(document).ready(function() {
 	$("#movies100").click(function() {
 		ready = [];
 		ajaxMovieEasy();
-		var value = $("#movies300");
+		var value = $("#movies100");
 		var wager = value.data("value");
 		ready.push(wager);
 		console.log("wager = " + wager);
@@ -673,7 +673,7 @@ $(document).ready(function() {
 	$("#movies200").click(function() {
 		ready = [];
 		ajaxMovieMedium();
-		var value = $("#movies300");
+		var value = $("#movies200");
 		var wager = value.data("value");
 		ready.push(wager);
 		console.log("wager = " + wager);

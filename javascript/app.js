@@ -706,7 +706,7 @@ $(document).ready(function() {
 	}
 
 	function timerCount() {
-		counter = setInterval(doubleJeopardy, 5000);
+		counter = setInterval(doubleJeopardy, 45000);
 	};
 
 	function doubleJeopardy() {

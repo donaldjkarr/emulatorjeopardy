@@ -5,6 +5,7 @@ console.log("hello friend");
 var correctAnswer = [];
 var questions = [];
 var chosen;
+var counter;
 
 
 // var categories = {
@@ -43,9 +44,10 @@ var easySportsURL = "https://opentdb.com/api.php?amount=1&category=21&difficulty
 var mediumSportsURL = "https://opentdb.com/api.php?amount=1&category=21&difficulty=medium&type=multiple";
 var hardSportsURL = "https://opentdb.com/api.php?amount=1&category=21&difficulty=hard&type=multiple";
 
-
+var doubleJeopardyURL = "https://opentdb.com/api.php?amount=1&difficulty=hard&type=multiple";
 
 // FUNCTIONS AND AJAX CALLS
+
 
 // MOVIE APIs
 function ajaxMovieEasy() {
@@ -581,6 +583,42 @@ function ajaxSportsHard() {
 		    });
 }
 
+function ajaxDoubleJeopardy() {
+	$.ajax({
+	        url: doubleJeopardyURL,
+	        method: "GET"
+	    }).done(function(response) {
+	        console.log(response);
+
+	        correctAnswer = [];
+	        questions = [];
+
+	        var correct = response.results[0].correct_answer;
+	        correctAnswer.push(correct);
+	        questions.push(correct);
+
+	        $("#double-question").html(response.results[0].question);
+
+	        var other1 = response.results[0].incorrect_answers[0];
+	        var other2 = response.results[0].incorrect_answers[1];
+	        var other3 = response.results[0].incorrect_answers[2];
+
+	        questions.push(other1, other2, other3);
+
+	        randomize();
+
+	        $("#double-ans1").html(questions[0]);
+	        $("#double-ans2").html(questions[1]);
+	        $("#double-ans3").html(questions[2]);
+	        $("#double-ans4").html(questions[3]);
+
+
+		    console.log(questions);
+			console.log(correctAnswer);
+
+		    });
+}
+
 // // CONTINUE FUNCTION
 
 // function continueGame() {
@@ -656,6 +694,31 @@ $(document).ready(function() {
 		}
 	}
 
+
+	//TIMER FUNCTIONS
+
+	function doubleJeopardyScore() {	
+		if (chosen == correctAnswer) {
+			add.push("750"); 
+			} else {
+				sub.push("750");
+			}
+	}
+
+	function timerCount() {
+		counter = setInterval(doubleJeopardy, 5000);
+	};
+
+	function doubleJeopardy() {
+		clearInterval(counter);
+		ajaxDoubleJeopardy();
+		console.log("here comes the pain");
+		$("#doubleJeopardyModal").modal('show');
+	};
+
+	timerCount();
+
+	//CLICK EVENTS
 
 	// MOVIE CLICK EVENTS
 	$("#movies100").click(function() {
@@ -996,6 +1059,43 @@ $(document).ready(function() {
 		// console.log("addSum " + addSum + " subSum " + subSum);
 	});
 
+	//DOUBLE JEOPARDY CLICK EVENTS
+
+	$("#double-ans1").click(function() {
+		var question1 = $("#double-ans1").text();
+		chosen = question1;
+		console.log(chosen);
+		doubleJeopardyScore();
+		totalScore();
+		timerCount();
+	});
+
+	$("#double-ans2").click(function() {
+		var question1 = $("#double-ans2").text();
+		chosen = question1;
+		console.log(chosen);
+		doubleJeopardyScore();
+		totalScore();
+		timerCount();
+	});
+
+	$("#double-ans3").click(function() {
+		var question1 = $("#double-ans3").text();
+		chosen = question1;
+		console.log(chosen);
+		doubleJeopardyScore();
+		totalScore();
+		timerCount();
+	});
+
+	$("#double-ans4").click(function() {
+		var question1 = $("#double-ans4").text();
+		chosen = question1;
+		console.log(chosen);
+		doubleJeopardyScore();
+		totalScore();
+		timerCount();
+	});
 
 
 });

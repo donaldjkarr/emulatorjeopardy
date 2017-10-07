@@ -91,6 +91,10 @@ body {
     border-radius: 4px;
 }
 
+.answers:hover {
+	background-color: yellow;
+}
+
 #ans1 {
     display: flex;
 	align-items: center;
@@ -129,6 +133,54 @@ body {
 
 #ans4:hover {
 	cursor: pointer;
+}
+
+#double-ans1 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#double-ans1:hover {
+	cursor: pointer;
+}
+
+#double-ans2 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#double-ans2:hover {
+	cursor: pointer;
+}
+
+#double-ans3 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#double-ans3:hover {
+	cursor: pointer;
+}
+
+#double-ans4 {
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#double-ans4:hover {
+	cursor: pointer;
+}
+
+#double-podium {
+	background-color: #060ce9;
+}
+
+.modal-body {
+	background-color: #060ce9;
 }
 
 #scoreCard {
